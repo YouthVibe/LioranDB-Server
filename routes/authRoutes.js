@@ -5,6 +5,8 @@ import { oAuth2Client } from '../googleClient.js';
 
 const router = express.Router();
 router.use(cookieParser());
+const credentials = JSON.parse(process.env.GOOGLE_SECRET_JSON);
+const { client_id, client_secret, redirect_uris } = credentials.web;
 
 // Step 1: Redirect user to Google's OAuth 2.0 consent screen
 router.get('/google', (req, res) => {
@@ -29,7 +31,7 @@ router.get('/google/callback', async (req, res) => {
     // Decode user info from ID token
     const ticket = await oAuth2Client.verifyIdToken({
       idToken: tokens.id_token,
-      audience: process.env.GOOGLE_CLIENT_ID,
+      audience: client_id,
     });
 
     const payload = ticket.getPayload();
@@ -60,7 +62,7 @@ router.get('/me', async (req, res) => {
 
     const ticket = await oAuth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.GOOGLE_CLIENT_ID,
+      audience: client_id,
     });
     const payload = ticket.getPayload();
 

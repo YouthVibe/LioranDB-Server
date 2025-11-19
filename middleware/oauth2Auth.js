@@ -3,6 +3,8 @@ import { oAuth2Client } from '../googleClient.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
+const credentials = JSON.parse(process.env.GOOGLE_SECRET_JSON);
+const { client_id, client_secret, redirect_uris } = credentials.web;
 
 export const oauth2Auth = async (req, res, next) => {
   try {
@@ -17,7 +19,7 @@ export const oauth2Auth = async (req, res, next) => {
     // Verify token with Google
     const ticket = await oAuth2Client.verifyIdToken({
       idToken,
-      audience: process.env.GOOGLE_CLIENT_ID,
+      audience: client_id,
     });
 
     const payload = ticket.getPayload();
