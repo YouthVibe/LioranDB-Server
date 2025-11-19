@@ -1,5 +1,8 @@
 // middleware/oauth2Auth.js
 import { oAuth2Client } from '../googleClient.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const oauth2Auth = async (req, res, next) => {
   try {
