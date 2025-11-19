@@ -1,8 +1,8 @@
 {
-  "name": "hushar.spreadsheet",
+  "name": "liorandb-server",
   "type": "module",
-  "version": "1.0.1",
-  "description": "हुशार Spreadsheet is an AI-powered tool that helps  teachers fill Excel forms in minutes, saving time  and effort with smart, simple, and accurate  automation.",
+  "version": "1.0.0",
+  "description": "LioranDB is a lightweight, file-based database solution designed for simplicity and ease of use. It offers a command-line interface (CLI) for server management, user authentication, and CORS configuration, alongside a Node.js connector with a MongoDB-like API for seamless programmatic interaction.",
   "main": "server.js",
   "scripts": {
     "start": "node dist/server.cjs",
@@ -10,9 +10,6 @@
     "build": "esbuild server.js --bundle --platform=node --outfile=dist/server.cjs"
   },
   "keywords": [
-    "Ai",
-    "Spreadsheet",
-    "Automation"
   ],
   "author": "Swaraj Puppalwar",
   "license": "MIT",
