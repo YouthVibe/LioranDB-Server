@@ -1,0 +1,6 @@
+utils/test
+temp
+serviceAccountKey.json
+.env
+package-lock.json
+client_secret.json
