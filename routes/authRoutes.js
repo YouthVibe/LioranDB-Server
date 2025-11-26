@@ -46,7 +46,7 @@ router.get('/google/callback', async (req, res) => {
 
     // console.log("Token:", tokens); // Add this line to log the token
     // Redirect to frontend
-    res.redirect(`${process.env.CLIENT_URL}/callback?token=${tokens.id_token}`);
+    res.redirect(`${process.env.CLIENT_URL}/key`);
   } catch (err) {
     console.error('OAuth callback error:', err);
     res.status(500).json({ error: 'Authentication failed' });
