@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node dist/server.cjs",
-    "dev": "nodemon .",
+    "dev": "nodemon . --ignore frontend-nextjs",
     "build": "esbuild server.js --bundle --platform=node --outfile=dist/server.cjs"
   },
   "keywords": [
