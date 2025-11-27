@@ -27,7 +27,7 @@ const userCollection = UserModel.getCollection();
 app.use(express.json());
 // app.use(firebaseAuth());
 app.use(cors({
-  origin: ['http://localhost:2008', 'http://192.168.1.4:2008'],
+  origin: ['http://localhost:2008', 'http://192.168.1.4:2008', 'http://localhost:3000'],
   // credentials: true // ✅ MUST set this to allow HttpOnly cookies
 }));
 
